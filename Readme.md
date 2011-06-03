@@ -16,3 +16,5 @@ the newly added entries are sent confirmation e-mails.
 
 Getting way too tired of simply copy-pasting stuff can have 
 its own share of terrible outcomes. (:
+
+	Usage: ./sendMailTo.py -u <email@gmail.com> -p <password>
