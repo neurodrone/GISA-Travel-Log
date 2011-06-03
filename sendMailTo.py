@@ -17,6 +17,9 @@ import string
 from GdataSpreadSheets import SpreadSheetOps
 
 
+subject = 'GISA - Travel Log Update - Fall 2011' #Change the subject to suit the year. 
+docname = 'GISA - Travel Log for UB Fall 2011'	#Change the spreadsheet name if you want to.
+
 def getUserPass():
 	try:
 		optlist, args = getopt.getopt(sys.argv[1:], "u:p:")
@@ -79,7 +82,6 @@ def wrapStr(strname):
 
 def main():
 	f = open('mailedtillnowcount.txt', 'r+')
-	subject = 'GISA - Travel Log Update - Fall 2011'
 	user, passwd = getUserPass()
 	sampleWorksheet = SpreadSheetOps(user, passwd)
 	
@@ -87,7 +89,7 @@ def main():
 	f.close()
 	while(1):
 		to = []
-		contentsList = sampleWorksheet.getContentsList('GISA - Travel Log for UB Fall 2011', inp)
+		contentsList = sampleWorksheet.getContentsList(docname, inp)
 		if not contentsList:
 			print 'No records found for No. ' + str(inp)
 			print 'Exiting.'

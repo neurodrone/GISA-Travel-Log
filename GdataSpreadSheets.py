@@ -8,6 +8,7 @@
 # is accepted as in input to it.
 
 __author__ = 'vaibhav@bhembre.com (Vaibhav Bhembre)'
+
 try:
 	from xml.etree import ElementTree
 except ImportError:
