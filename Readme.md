@@ -18,3 +18,7 @@ Getting way too tired of simply copy-pasting stuff can have
 its own share of terrible outcomes. (:
 
 	Usage: ./sendMailTo.py -u <email@gmail.com> -p <password>
+
+Link to the my designed website:
+
+	http://gsa.buffalo.edu/gisa/new
