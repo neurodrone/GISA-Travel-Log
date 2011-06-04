@@ -65,6 +65,7 @@ def buildMessage(file, contentsList):
 	strDateofArr = 'Date of Arrival:'
 	strFlight = 'Flight name:'
 	strEmail = 'E-mail:'
+	strComments = 'Comments:'
 	finstr = string.replace(finstr, strDear, strDear + ' ' + contentsList["fullname"].text + ',')
 	finstr = string.replace(finstr, strHomeAddress, wrapStr(strHomeAddress) + '\n' + str(contentsList["homeaddressindia"].text))
 	finstr = string.replace(finstr, strContactInd, wrapStr(strContactInd) + ' ' + str(contentsList["contactno.india"].text))
@@ -73,6 +74,7 @@ def buildMessage(file, contentsList):
 	finstr = string.replace(finstr, strDateofArr, wrapStr(strDateofArr) + ' ' + contentsList["dateofarrival"].text + ' [mm/dd/yy]')
 	finstr = string.replace(finstr, strFlight, wrapStr(strFlight) + ' ' + contentsList["flightnameno."].text)
 	finstr = string.replace(finstr, strEmail, wrapStr(strEmail) + ' ' + contentsList["emailveryimportant"].text)
+	finstr = string.replace(finstr, strComments, wrapStr(strComments) + '\n' + contentsList["commentsifany"].text)
 	
 	f.close()
 	return finstr
