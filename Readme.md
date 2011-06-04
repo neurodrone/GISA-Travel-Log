@@ -19,6 +19,4 @@ its own share of terrible outcomes. (:
 
 	Usage: ./sendMailTo.py -u <email@gmail.com> -p <password>
 
-Link to the my designed website:
-
-	[GISA](http://gsa.buffalo.edu/gisa/new)
+Link to the my designed website: [GISA](http://gsa.buffalo.edu/gisa/new)
