@@ -74,7 +74,7 @@ def buildMessage(file, contentsList):
 	finstr = string.replace(finstr, strDateofArr, wrapStr(strDateofArr) + ' ' + contentsList["dateofarrival"].text + ' [mm/dd/yy]')
 	finstr = string.replace(finstr, strFlight, wrapStr(strFlight) + ' ' + contentsList["flightnameno."].text)
 	finstr = string.replace(finstr, strEmail, wrapStr(strEmail) + ' ' + contentsList["emailveryimportant"].text)
-	finstr = string.replace(finstr, strComments, wrapStr(strComments) + '\n' + contentsList["commentsifany"].text)
+	finstr = string.replace(finstr, strComments, wrapStr(strComments) + '\n' + str(contentsList["commentsifany"].text))
 	
 	f.close()
 	return finstr
