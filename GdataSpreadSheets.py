@@ -91,6 +91,28 @@ class SpreadSheetOps:
 			else:
 				print 'Generic: %s %s\n' % (i, entry.title.text)
 				
+	def ListInsertAction(self, spname, data_dictionary):
+		feed = self.gd_client.GetSpreadsheetsFeed()
+		ip = self.getFeedId(feed, spname)
+		if (ip < 0): 
+			print 'Spreadsheet named \'' + spname + '\' doesn\'t exist. Please try again.\nExiting.'
+			sys.exit(2)
+		id_parts = feed.entry[ip].id.text.split('/')
+		self.curr_key = id_parts[len(id_parts)-1]
+		feed = self.gd_client.GetWorksheetsFeed(self.curr_key)
+		id_parts = feed.entry[0].id.text.split('/')
+		self.curr_wksht_id = id_parts[len(id_parts)-1]
+		entry =	self.gd_client.InsertRow(data_dictionary, self.curr_key, self.curr_wksht_id)
+		if isinstance(entry, gdata.spreadsheet.SpreadsheetsList):
+			print "Insertion done!"
+
+	def StringToDictionary(data):
+		result = {}
+		for param in data.split():
+			key, value = param.split("=")
+			result[key] = value
+		return result
+
 	def getFeedId(self, feed, name):
 		for i, entry in enumerate(feed.entry):
 			if (entry.title.text == name):
